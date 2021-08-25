@@ -60,7 +60,7 @@ jobs:
         id: build-push
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: ctms-api
+          ECR_REPOSITORY: careers
           IMAGE_TAG: ${{ needs.prepare.outputs.FULL_IMAGE_TAG }}
         run: |
           printf '{\n    "commit": "%s",\n    "version": "%s",\n    "image_tag": "%s",\n    "source": "%s",\n    "build": "%s"\n}\n' \
