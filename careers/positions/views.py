@@ -1,5 +1,5 @@
-from django.shortcuts import render
 from bakery.views import BuildableTemplateView
+# from django.shortcuts import render
 
 # Create your views here.
 class PositionsIndexPageTemplateView(BuildableTemplateView):

@@ -1,6 +1,6 @@
 from careers.positions.views import PositionsIndexPageTemplateView
 from django.conf.urls import url
-from django.urls import path, re_path, include
+from django.urls import path, include
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -28,7 +28,11 @@ urlpatterns = [
     url(r'^__heartbeat__/$', views.HeartBeatView.as_view(), name='careers.heartbeat'),
     url(r'^__lbheartbeat__/$', views.LBHeartBeatView.as_view(), name='careers.lbheartbeat'),
     url(r'^__version__/$', views.VersionView.as_view(), name='careers.version'),
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 1226f8c... Collect static build (#4)
     path('cms/', include(wagtailadmin_urls)),
     path('documents/', include(wagtaildocs_urls)),
 

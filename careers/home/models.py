@@ -24,14 +24,14 @@ class HomePage(Page):
     ContentBlockOneContent = RichTextField(blank=True)
 
     imageA = models.ForeignKey(
-        'wagtailimages.Image', 
+        'wagtailimages.Image',
         related_name='+',
         on_delete=models.SET_NULL,
         null=True
     )
 
     imageB = models.ForeignKey(
-        'wagtailimages.Image', 
+        'wagtailimages.Image',
         related_name='+',
         on_delete=models.SET_NULL,
         null=True
@@ -45,21 +45,21 @@ class HomePage(Page):
     )
 
     imageD = models.ForeignKey(
-        'wagtailimages.Image', 
+        'wagtailimages.Image',
         related_name='+',
         on_delete=models.SET_NULL,
         null=True
     )
 
     imageE = models.ForeignKey(
-        'wagtailimages.Image', 
+        'wagtailimages.Image',
         related_name='+',
         on_delete=models.SET_NULL,
         null=True
     )
 
     imageF = models.ForeignKey(
-        'wagtailimages.Image', 
+        'wagtailimages.Image',
         related_name='+',
         on_delete=models.SET_NULL,
         null=True
@@ -90,6 +90,7 @@ class HomePage(Page):
         ImageChooserPanel('imageF'),
     ]
 
+
 class HomeIndexPage(Page):
     heroHeader = models.CharField(max_length=255)
     heroText = models.CharField(max_length=255)
@@ -109,14 +110,14 @@ class HomeIndexPage(Page):
     ContentBlockOneContent = RichTextField(blank=True)
 
     imageA = models.ForeignKey(
-        'wagtailimages.Image', 
+        'wagtailimages.Image',
         related_name='+',
         on_delete=models.SET_NULL,
         null=True
     )
 
     imageB = models.ForeignKey(
-        'wagtailimages.Image', 
+        'wagtailimages.Image',
         related_name='+',
         on_delete=models.SET_NULL,
         null=True
@@ -130,21 +131,21 @@ class HomeIndexPage(Page):
     )
 
     imageD = models.ForeignKey(
-        'wagtailimages.Image', 
+        'wagtailimages.Image',
         related_name='+',
         on_delete=models.SET_NULL,
         null=True
     )
 
     imageE = models.ForeignKey(
-        'wagtailimages.Image', 
+        'wagtailimages.Image',
         related_name='+',
         on_delete=models.SET_NULL,
         null=True
     )
 
     imageF = models.ForeignKey(
-        'wagtailimages.Image', 
+        'wagtailimages.Image',
         related_name='+',
         on_delete=models.SET_NULL,
         null=True
