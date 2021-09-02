@@ -28,4 +28,5 @@ COPY --chown=app . /app
 RUN python manage.py collectstatic --noinput
 USER app
 
-CMD ["gunicorn", "careers.wsgi:application", "--daemon". "-b", "0.0.0.0:8000", "-w 2", "--timeout", "300"]
+CMD ./scripts/run.sh
+
