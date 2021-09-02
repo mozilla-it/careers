@@ -10,7 +10,6 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 import os
 
-import dj_database_url
 from decouple import Csv, config
 
 
@@ -130,7 +129,7 @@ MEDIA_URL = config('MEDIA_URL', '/media/')
 BUILD_DIR = '/app/static-build'
 
 BAKERY_VIEWS = (
-	'wagtailbakery.views.AllPublishedPagesView',
+    'wagtailbakery.views.AllPublishedPagesView',
 )
 
 WAGTAIL_SITE_NAME = 'Careers Site Admin'
