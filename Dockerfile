@@ -27,7 +27,7 @@ RUN pip install --require-hashes --no-cache-dir -r requirements.txt
 COPY --chown=app . /app
 
 RUN python manage.py collectstatic --noinput
-RUN chown app:app /app/static
+RUN chown -R app:app /app/static
 
 USER app
 
