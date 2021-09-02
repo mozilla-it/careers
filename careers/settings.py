@@ -10,7 +10,6 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 import os
 
-import dj_database_url
 from decouple import Csv, config
 
 
@@ -22,12 +21,12 @@ ROOT = os.path.dirname(os.path.join(BASE_DIR, '..'))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = config('SECRET_KEY', default='ssssshhhhh')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool)
+DEBUG = config('DEBUG', cast=bool, default='false')
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv(), default='*')
 # Application definition
 
 INSTALLED_APPS = [
@@ -99,11 +98,11 @@ WSGI_APPLICATION = 'careers.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('PG_NAME'),
-        'USER': config('PG_USER'),
-        'PASSWORD': config('PG_PASSWORD'),
-        'HOST': config('PG_HOST'),
-        'PORT': config('PG_PORT'),    
+        'NAME': config('PG_NAME', default='careers'),
+        'USER': config('PG_USER', default=''),
+        'PASSWORD': config('PG_PASSWORD', default=''),
+        'HOST': config('PG_HOST', default=''),
+        'PORT': config('PG_PORT', default=''),
     }
 }
 
@@ -130,7 +129,7 @@ MEDIA_URL = config('MEDIA_URL', '/media/')
 BUILD_DIR = '/app/static-build'
 
 BAKERY_VIEWS = (
-	'wagtailbakery.views.AllPublishedPagesView',
+    'wagtailbakery.views.AllPublishedPagesView',
 )
 
 WAGTAIL_SITE_NAME = 'Careers Site Admin'
