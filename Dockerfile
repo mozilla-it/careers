@@ -23,9 +23,10 @@ RUN mkdir /app/static-build
 COPY requirements.txt requirements.txt
 RUN pip install --require-hashes --no-cache-dir -r requirements.txt
 
+RUN python manage.py collectstatic --noinput
+
 COPY --chown=app . /app
 
-RUN python manage.py collectstatic --noinput
 USER app
 
 CMD ./scripts/run.sh
