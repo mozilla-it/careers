@@ -132,6 +132,11 @@ BAKERY_VIEWS = (
     'wagtailbakery.views.AllPublishedPagesView',
 )
 
+AWS_REGION = config('AWS_REGION', default='us-west-2')
+AWS_BUCKET_NAME  = config('AWS_BUCKET_NAME', default='fake-bucket')
+
+BAKERY_GZIP = config('BAKERY_GZIP', default=True, cast=bool)
+
 WAGTAIL_SITE_NAME = 'Careers Site Admin'
 
 TEMPLATES = [
