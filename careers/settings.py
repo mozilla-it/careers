@@ -129,7 +129,9 @@ MEDIA_URL = config('MEDIA_URL', '/media/')
 BUILD_DIR = '/app/static-build'
 
 BAKERY_VIEWS = (
-    'wagtailbakery.views.AllPublishedPagesView',
+	'wagtailbakery.views.AllPublishedPagesView',
+    'careers.positions.views.PositionsIndexPageTemplateView',
+    'careers.home.views.HomeIndexPageTemplateView',
 )
 
 AWS_REGION = config('AWS_REGION', default='us-west-2')
@@ -152,9 +154,33 @@ TEMPLATES = [
             ],
         }
     },
+    #
+    #
+    # This is part of supporting Jinja Templates...
+    # https://docs.wagtail.io/en/v2.2/advanced_topics/jinja2.html
+    #
+    {
+        'BACKEND': 'django.template.backends.jinja2.Jinja2',
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'extensions': [
+                'wagtail.core.jinja2tags.core',
+                'wagtail.admin.jinja2tags.userbar',
+                'wagtail.images.jinja2tags.images',
+            ],
+            'context_processors': [
+                'careers.base.context_processors.settings',
+                'careers.base.context_processors.i18n',
+            ],
+        },
+    },
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'APP_DIRS': True,
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+                 os.path.join(BASE_DIR, 'your_app_name', 'templates', 'your_app_name'),
+        ],
         'OPTIONS': {
             'context_processors': [
                 'django.contrib.auth.context_processors.auth',
@@ -166,6 +192,7 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
                 'careers.base.context_processors.settings',
+                'careers.base.context_processors.i18n',
             ],
         }
     },
