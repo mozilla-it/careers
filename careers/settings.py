@@ -133,7 +133,7 @@ BAKERY_VIEWS = (
 )
 
 AWS_REGION = config('AWS_REGION', default='us-west-2')
-AWS_BUCKET_NAME  = config('AWS_BUCKET_NAME', default='fake-bucket')
+AWS_BUCKET_NAME = config('AWS_BUCKET_NAME', default='fake-bucket')
 
 BAKERY_GZIP = config('BAKERY_GZIP', default=True, cast=bool)
 
